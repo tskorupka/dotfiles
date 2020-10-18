@@ -1,3 +1,11 @@
+" Globals
+
+set exrc
+set secure
+set t_co=256
+set background=light
+colorscheme PaperColor
+
 set number
 
 let g:gutentags_cache_dir = '~/.vim/gutentags'
@@ -24,6 +32,11 @@ let g:lightline = {
 
 let g:phpcd_autoload_path = '~/.vim/plugged/phpcd.vim/vendor/autoload.php'
 
+let g:ackprg = 'ag --vimgrep'
+
+" NERDTree
+let NERDTreeChDirMode=2
+
 " Autocommands
 
 autocmd StdinReadPre * let s:std_in=1
@@ -36,6 +49,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == ""
 :nnoremap <F8> :TagbarToggle<CR>
 :nnoremap <F9> :ALEToggle<CR>
 :nnoremap <F10> :NERDTreeToggle<CR>
+:nnoremap <Leader>f :Files<CR>
+:nnoremap <Leader>Nf :NERDTreeFind<CR>
+:nnoremap <Leader>UD :SftpDownload<CR>
+:nnoremap <Leader>UU :SftpUpload<CR>
 
 " Autocompletion
 set shortmess+=c
@@ -76,6 +93,15 @@ autocmd FileType php noremap <Leader>s :call PhpSortUse()<CR>
 autocmd FileType php :set expandtab
 autocmd FileType php :set tabstop=2
 autocmd FileType php :set shiftwidth=2
+autocmd FileType typescriptreact :set expandtab
+autocmd FileType typescriptreact :set tabstop=2
+autocmd FileType typescriptreact :set shiftwidth=2
+
+" Javascript, Typescript and related
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
+" Coldfusion
+autocmd BufNewFile,BufRead *.cfm,*.cfc setf cfml
 
 " GIT
 set updatetime=100

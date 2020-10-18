@@ -1,13 +1,11 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
-source ~/.vimrc
 "
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'bfredl/nvim-miniyank'
 Plug 'moll/vim-bbye'
@@ -52,5 +50,28 @@ Plug 'honza/vim-snippets'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 
+" Themes
+Plug 'NLKNguyen/papercolor-theme'
+
+" JS, TSX
+Plug 'pangloss/vim-javascript'     " JavaScript support
+Plug 'leafgarland/typescript-vim'  " TypeScript syntax
+Plug 'peitalin/vim-jsx-typescript' " TSX syntax
+Plug 'maxmellon/vim-jsx-pretty'    " JS and JSX syntax
+
+" GraphQL
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+
+" Ack
+Plug 'mileszs/ack.vim'
+
+" Coldfusion
+Plug 'ernstvanderlinden/vim-coldfusion'
+
+" Sftp
+Plug 'eshion/vim-sftp-sync'
+
 " Initialize plugin system
 call plug#end()
+
+source ~/.vimrc
